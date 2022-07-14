@@ -1,0 +1,59 @@
+GET http://localhost:4000/Users 
+
+###
+
+POST http://localhost:4000/signup
+Content-Type: application/json
+
+{
+"username":"ahmad",
+"password":"1996",
+"role":"admin"
+
+}
+
+
+###
+
+POST http://localhost:4000/signin
+Content-Type:application/json
+Authorization: Bearer {login.response.body.access_token}
+
+{
+"username":"med",
+"password":"1996"
+}
+
+
+###
+POST http://localhost:4000/house
+Content-Type: application/json
+
+{
+   "category" : "rent",
+    "describtion" : " مزرعه و مسبح للايجار اليومي",
+    "area" : "1200 m2",
+    "location" : "اربد",
+    "price" : "$100",
+      "owner" : "mohammad alshraideh",
+    "phone" : "0795956190"
+    
+}
+###
+
+
+POST  http://localhost:4000/sales
+Content-Type: application/json
+{
+    "type":"sale",
+    "area":"150 m2",
+    "location":"amman",
+    "price":"$120,000",
+    "owner":"nobody",
+    "phone":"0795-95-6190"
+}
+###
+GET http://localhost:4000/house/sale
+
+###
+GET http://localhost:4000/house/rent
